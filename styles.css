@@ -55,29 +55,13 @@ a:hover {
     border-radius: 8px;
 }
 
-/* Animated Background */
-.sky {
-    background: #00BFFF;
+/* Static Background Image */
+.background-image {
+    background: url('https://i.ibb.co/w40fY98/images.png') no-repeat center center/cover;
     width: 100%;
     height: 200px;
     position: absolute;
     top: 0;
     left: 0;
-    overflow: hidden;
     z-index: -1;
-}
-
-.clouds {
-    background: url('/mnt/data/images.png');
-    width: 200%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: moveClouds 30s linear infinite;
-}
-
-@keyframes moveClouds {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
 }
