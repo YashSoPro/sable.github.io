@@ -3,56 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yash Kumar's Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- AOS CSS -->
-    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="styles.css" rel="stylesheet">
+    <title>Welcome - Sable Meow</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #87CEEB, #FFFFFF);
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .content {
+            text-align: center;
+            padding: 2em;
+        }
+        .profile-picture {
+            background-image: url('https://i.ibb.co/TWB5K2j/1000459698.png');
+            background-size: cover;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 1em;
+        }
+        .section {
+            margin: 2em 0;
+        }
+        .projects {
+            list-style-type: none;
+            padding: 0;
+        }
+        .projects li {
+            margin: 0.5em 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container text-center">
-            <h1>Yash Kumar's Portfolio</h1>
-            <p>Connect with me on social media: <a href="https://github.com/SableMeow" target="_blank">@SableMeow</a></p>
-        </div>
-        <div class="background-image"></div>
-    </header>
-    <div class="container main" data-aos="fade-up">
-        <h2>About Me</h2>
-        <p>Hi, I'm Yash Kumar. Welcome to my portfolio page! Here, you'll find some of my projects that I've worked on. They might not be perfect, but they are a testament to my journey and efforts.</p>
-        
-        <h2>Projects</h2>
-        <ul class="projects">
-            <li data-aos="fade-right">
-                <h3>Project 1</h3>
-                <p>A brief description of your project. <a href="https://github.com/SableMeow/project1" target="_blank">View on GitHub</a></p>
-            </li>
-            <li data-aos="fade-right">
-                <h3>Project 2</h3>
-                <p>A brief description of your project. <a href="https://github.com/SableMeow/project2" target="_blank">View on GitHub</a></p>
-            </li>
-            <li data-aos="fade-right">
-                <h3>Project 3</h3>
-                <p>A brief description of your project. <a href="https://github.com/SableMeow/project3" target="_blank">View on GitHub</a></p>
-            </li>
-        </ul>
+    <div class="header">
+        <h1>Welcome</h1>
     </div>
-    <footer class="text-center">
-        <p>&copy; 2024 Yash Kumar. All rights reserved.</p>
-    </footer>
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- AOS JS -->
-    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init();
-    </script>
+    <div class="content">
+        <div class="profile-picture"></div>
+        <div class="section">
+            <h2>My name is Yash Kumar</h2>
+            <h3>Also known as Sable Meow</h3>
+        </div>
+        <div class="section">
+            <h2>My Hobby</h2>
+            <p>Music and I.T</p>
+        </div>
+        <div class="section">
+            <h2>My GitHub Projects</h2>
+            <ul class="projects">
+                <li>Project 1</li>
+                <li>Project 2</li>
+                <li>Project 3</li>
+                <!-- Add your actual GitHub projects here -->
+            </ul>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
