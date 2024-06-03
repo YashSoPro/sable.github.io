@@ -22,7 +22,7 @@
             </div>
             <div class="section">
                 <h2>Hobbies</h2>
-                <p>Music and I.T</p>
+                <p id="hobbies"></p>
             </div>
             <div class="section">
                 <h2>GitHub Projects</h2>
@@ -33,7 +33,9 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         // Your GitHub projects
         const projects = [
@@ -48,7 +50,7 @@
         function displayProject(index) {
             const projectContainer = document.getElementById("projectContainer");
             projectContainer.innerHTML = `
-                <div class="project-box" id="projectBox">
+                <div class="project-box">
                     <a href="${projects[index].link}" target="_blank">
                         <img src="https://i.ibb.co/kBCbD6y/github-icon.png" alt="GitHub">
                         <p>${projects[index].name}</p>
@@ -60,21 +62,32 @@
         // Display the initial project
         displayProject(currentProjectIndex);
 
-        // Swipe functionality
-        const projectBox = document.getElementById("projectBox");
-        const hammertime = new Hammer(projectBox);
-        hammertime.on("swipeleft", function() {
-            if (currentProjectIndex < projects.length - 1) {
-                currentProjectIndex++;
-                displayProject(currentProjectIndex);
+        // Typed.js typewriter effect for hobbies with occasional spelling mistakes
+        const hobbiesTyped = new Typed("#hobbies", {
+            strings: ["Music and I.T", "Coding and Gming", "Exploring new technlogies"],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true,
+            backDelay: 2000,
+            startDelay: 1000,
+            onStringTyped: function(arrayPos, self) {
+                const currentString = self.strings[self.sequence[self.arrayPos]];
+                const typoChance = Math.random();
+                if (typoChance < 0.1) { // 10% chance of introducing a typo
+                    const typoIndex = Math.floor(Math.random() * currentString.length);
+                    const typoChar = String.fromCharCode(97 + Math.floor(Math.random() * 26)); // Random lowercase letter
+                    const correctedString = currentString.substring(0, typoIndex) + typoChar + currentString.substring(typoIndex + 1);
+                    self.strings[arrayPos] = correctedString;
+                    self.options.callbacks.onStringTyped(arrayPos, self);
+                }
             }
         });
-        hammertime.on("swiperight", function() {
-            if (currentProjectIndex > 0) {
-                currentProjectIndex--;
-                displayProject(currentProjectIndex);
-            }
-        });
+
+        // Function to change the project every 10 seconds
+        setInterval(() => {
+            currentProjectIndex = (currentProjectIndex + 1) % projects.length;
+            displayProject(currentProjectIndex);
+        }, 10000);
     </script>
 </body>
 </html>
