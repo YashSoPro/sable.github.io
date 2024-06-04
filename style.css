@@ -197,29 +197,4 @@
 
             // Fetch GitHub Projects and Display Them
             const projects = [
-                { name: "emuinabox", link: "https://github.com/YashSoPro/emuinabox" },
-                { name: "MeowCraftServer", link: "https://github.com/YashSoPro/MeowCraftServer" },
-                { name: "meowmc", link: "https://github.com/YashSoPro/meowmc" }
-            ];
-
-            const projectContainer = $("#projects");
-            projects.forEach(project => {
-                const listItem = `
-                    <li class="project-box">
-                        <a href="${project.link}" target="_blank" class="project-link">${project.name}</a>
-                    </li>`;
-                projectContainer.append(listItem);
-            });
-
-            // Using GSAP for Smooth Animations
-            gsap.from(".project-box", {
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                stagger: 0.3
-            });
-        });
-    </script>
-</body>
-
-</html>
+               
