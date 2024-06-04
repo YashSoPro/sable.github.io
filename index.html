@@ -8,14 +8,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/missing.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="top-left">
+        <i class="fas fa-laptop-code"></i> Yash's Portfolio
+    </div>
+    <div class="dark-mode-toggle">
+        <button id="dark-mode-btn"><i class="fas fa-moon"></i></button>
+    </div>
     <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
         <div class="profile-container text-center" data-aos="fade-in">
-            <img src="https://i.ibb.co/w40fY98/1000459698.png" alt="Profile Picture" class="profile-pic mb-4 hvr-float-shadow">
-            <h1 class="text-white hvr-underline-from-center">Yash Kumar</h1>
-            <p class="text-white hvr-grow">Age: XX</p>
+            <div class="profile-pic-container">
+                <img src="https://media.tenor.com/r94VdA4XAk4AAAAC/adventure-time-marshall.gif" alt="Profile Picture" class="profile-pic mb-4 hvr-float-shadow">
+                <div class="profile-pic-name-overlay">
+                    <p>Yash Kumar</p>
+                </div>
+            </div>
+            <h1 class="text-white hvr-underline-from-center typewrite" data-period="2000" data-type='[ "Yash Kumar" ]'>
+                <span class="wrap"></span>
+            </h1>
+            <p class="text-white hvr-grow">Age: 15</p>
             <p class="text-white hvr-grow">Hobbies: Music, Coding</p>
         </div>
         
@@ -37,9 +51,16 @@
             </ul>
         </div>
     </div>
+
+    <div id="dark-mode-image" class="dark-mode-image">
+        <img src="https://i.ibb.co/vZj8kRt/dark-mode.png" alt="Dark Mode Image">
+    </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect/dist/core.js"></script>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <script src="https://unpkg.com/_hyperscript.org"></script>
     <script src="scripts.js"></script>
     <script>
         AOS.init();
