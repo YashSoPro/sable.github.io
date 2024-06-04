@@ -22,27 +22,29 @@ displayProjects();
 // Typed.js typewriter effect for different sections
 const nameTyped = new Typed("#name", {
     strings: ["Yash Kumar"],
-    typeSpeed: 50,
-    backSpeed: 30,
-    startDelay: 500,
+    typeSpeed: 100,
+    backSpeed: 60,
+    startDelay: 1000,
+    backDelay: 2000,
     showCursor: false
 });
 
 const aliasTyped = new Typed("#alias", {
     strings: ["Also known as Sable Meow"],
-    typeSpeed: 50,
-    backSpeed: 30,
-    startDelay: 2500,
+    typeSpeed: 100,
+    backSpeed: 60,
+    startDelay: 5000,
+    backDelay: 2000,
     showCursor: false
 });
 
 const hobbiesTyped = new Typed("#hobbies", {
     strings: ["Music and I.T", "Coding and Gaming", "Exploring new technologies"],
-    typeSpeed: 50,
-    backSpeed: 30,
+    typeSpeed: 100,
+    backSpeed: 60,
     loop: true,
-    backDelay: 2000,
-    startDelay: 4500,
+    backDelay: 3000,
+    startDelay: 9000,
     showCursor: false
 });
 
