@@ -1,57 +1,47 @@
-$(document).ready(function() {
-    // Ensure the loader overlay is hidden after content loads.
-    $(window).on('load', function() {
-        setTimeout(function(){
-            $(".loader-overlay").fadeOut(500);
-        }, 1000); 
-    });
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #87CEEB, #FFFFFF);
+  display: flex; /* Center content vertically */
+  min-height: 100vh; /* Set minimum height for full viewport */
+  align-items: center; /* Center content horizontally */
+}
 
-    // Typewriter Effect for Profile Information
-    const typewriterSettings = {
-        waitingTime: 1000,
-        delay: 150,
-        hide: 0,
-        cursor: true
-    };
+.header {
+  background-color: #1976d2;
+  color: white;
+  padding: 1em 0;
+}
 
-    $("#name").typewriter({ 
-        ...typewriterSettings,
-        text: "Yash Kumar"
-    });
+.content {
+  padding: 2em;
+}
 
-    $("#alias").typewriter({
-        ...typewriterSettings,
-        text: "Also known as Sable Meow",
-        waitingTime: 2000 // Overriding waitingTime for alias
-    });
+.profile-picture {
+  /* Removed: profile picture styles */
+}
 
-    $("#hobbies").typewriter({
-        ...typewriterSettings,
-        text: "Music and I.T",
-        waitingTime: 3000 // Overriding waitingTime for hobbies
-    });
+.background {
+  background-image: url('https://i.ibb.co/w40fY98/1000459698.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto; /* Removed fixed height */
+}
 
-    // Fetch GitHub Projects and Display Them
-    const projects = [
-        { name: "emuinabox", link: "https://github.com/YashSoPro/emuinabox" },
-        { name: "MeowCraftServer", link: "https://github.com/YashSoPro/MeowCraftServer" },
-        { name: "meowmc", link: "https://github.com/YashSoPro/meowmc" }
-    ];
+.section {
+  margin-bottom: 2em;
+}
 
-    const projectContainer = $("#projects");
-    projects.forEach(project => {
-        const listItem = `
-            <li class="project-box">
-                <a href="${project.link}" target="_blank" class="project-link">${project.name}</a>
-            </li>`;
-        projectContainer.append(listItem);
-    });
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
 
-    // Using GSAP for Smooth Animations on Project Boxes
-    gsap.from(".project-box", {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        stagger: 0.3
-    });
-});
+.project-box {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd
