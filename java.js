@@ -1,59 +1,57 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #87CEEB, #FFFFFF);
-}
+$(document).ready(function() {
+    // Ensure the loader overlay is hidden after content loads.
+    $(window).on('load', function() {
+        setTimeout(function(){
+            $(".loader-overlay").fadeOut(500);
+        }, 1000); 
+    });
 
-.header {
-    background-color: #1976d2;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-}
+    // Typewriter Effect for Profile Information
+    const typewriterSettings = {
+        waitingTime: 1000,
+        delay: 150,
+        hide: 0,
+        cursor: true
+    };
 
-.content {
-    text-align: center;
-    padding: 2em;
-}
+    $("#name").typewriter({ 
+        ...typewriterSettings,
+        text: "Yash Kumar"
+    });
 
-.profile-picture {
-    background-image: url('https://i.ibb.co/pQFDkT0/1000459698.png');
-    background-size: cover;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-bottom: 1em;
-    border: 4px solid #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    $("#alias").typewriter({
+        ...typewriterSettings,
+        text: "Also known as Sable Meow",
+        waitingTime: 2000 // Overriding waitingTime for alias
+    });
 
-.background {
-    background-image: url('https://i.ibb.co/w40fY98/1000459698.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
+    $("#hobbies").typewriter({
+        ...typewriterSettings,
+        text: "Music and I.T",
+        waitingTime: 3000 // Overriding waitingTime for hobbies
+    });
 
-.section {
-    margin: 2em 0;
-}
+    // Fetch GitHub Projects and Display Them
+    const projects = [
+        { name: "emuinabox", link: "https://github.com/YashSoPro/emuinabox" },
+        { name: "MeowCraftServer", link: "https://github.com/YashSoPro/MeowCraftServer" },
+        { name: "meowmc", link: "https://github.com/YashSoPro/meowmc" }
+    ];
 
-.projects {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    list-style-type: none;
-    padding: 0;
-}
+    const projectContainer = $("#projects");
+    projects.forEach(project => {
+        const listItem = `
+            <li class="project-box">
+                <a href="${project.link}" target="_blank" class="project-link">${project.name}</a>
+            </li>`;
+        projectContainer.append(listItem);
+    });
 
-.project-box {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 200px;
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
+    // Using GSAP for Smooth Animations on Project Boxes
+    gsap.from(".project-box", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.3
+    });
+});
