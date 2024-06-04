@@ -19,34 +19,33 @@ function displayProjects() {
 
 displayProjects();
 
-// Typed.js typewriter effect for different sections
-const nameTyped = new Typed("#name", {
-    strings: ["Yash Kumar"],
-    typeSpeed: 100,
-    backSpeed: 60,
-    startDelay: 1000,
-    backDelay: 2000,
-    showCursor: false
-});
+// Initialize typewriter effects with delays
+setTimeout(() => {
+    $("#name").typewriter({
+        delay: 150,
+        waitingTime: 1000,
+        hide: 0,
+        cursor: true
+    });
+}, 1000);
 
-const aliasTyped = new Typed("#alias", {
-    strings: ["Also known as Sable Meow"],
-    typeSpeed: 100,
-    backSpeed: 60,
-    startDelay: 5000,
-    backDelay: 2000,
-    showCursor: false
-});
+setTimeout(() => {
+    $("#alias").typewriter({
+        delay: 150,
+        waitingTime: 2000,
+        hide: 0,
+        cursor: true
+    });
+}, 8000);
 
-const hobbiesTyped = new Typed("#hobbies", {
-    strings: ["Music and I.T", "Coding and Gaming", "Exploring new technologies"],
-    typeSpeed: 100,
-    backSpeed: 60,
-    loop: true,
-    backDelay: 3000,
-    startDelay: 9000,
-    showCursor: false
-});
+setTimeout(() => {
+    $("#hobbies").typewriter({
+        delay: 150,
+        waitingTime: 3000,
+        hide: 0,
+        cursor: true
+    });
+}, 15000);
 
 // Introducing typos randomly in the strings
 function introduceTypos(strings) {
@@ -60,4 +59,6 @@ function introduceTypos(strings) {
     });
 }
 
-hobbiesTyped.strings = introduceTypos(hobbiesTyped.strings);
+let hobbiesText = $("#hobbies").attr("tw-text").split(', ');
+hobbiesText = introduceTypos(hobbiesText);
+$("#hobbies").attr("tw-text", hobbiesText.join(', '));
