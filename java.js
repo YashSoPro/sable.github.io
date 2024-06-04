@@ -1,47 +1,58 @@
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom, #87CEEB, #FFFFFF);
-  display: flex; /* Center content vertically */
-  min-height: 100vh; /* Set minimum height for full viewport */
-  align-items: center; /* Center content horizontally */
-}
+$(document).ready(function() {
 
-.header {
-  background-color: #1976d2;
-  color: white;
-  padding: 1em 0;
-}
+  // Loader overlay (assuming you still want it)
+  $(window).on('load', function() {
+    setTimeout(function(){
+      $(".loader-overlay").fadeOut(500);
+    }, 1000); 
+  });
 
-.content {
-  padding: 2em;
-}
+  // Typewriter Effect for Profile Information (assuming you're keeping it)
+  const typewriterSettings = {
+    waitingTime: 1000,
+    delay: 150,
+    hide: 0,
+    cursor: true
+  };
 
-.profile-picture {
-  /* Removed: profile picture styles */
-}
+  $("#name").typewriter({ 
+    ...typewriterSettings,
+    text: "Yash Kumar"
+  });
 
-.background {
-  background-image: url('https://i.ibb.co/w40fY98/1000459698.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: auto; /* Removed fixed height */
-}
+  $("#alias").typewriter({
+    ...typewriterSettings,
+    text: "Also known as Sable Meow",
+    waitingTime: 2000 // Overriding waitingTime for alias
+  });
 
-.section {
-  margin-bottom: 2em;
-}
+  $("#hobbies").typewriter({
+    ...typewriterSettings,
+    text: "Music and I.T",
+    waitingTime: 3000 // Overriding waitingTime for hobbies
+  });
 
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style-type: none;
-  padding: 0;
-}
+  // Fetch GitHub Projects (assuming you still want it)
+  const projects = [
+    { name: "emuinabox", link: "https://github.com/YashSoPro/emuinabox" },
+    { name: "MeowCraftServer", link: "https://github.com/YashSoPro/MeowCraftServer" },
+    { name: "meowmc", link: "https://github.com/YashSoPro/meowmc" }
+  ];
 
-.project-box {
-  background-color: #f8f9fa;
-  border: 1px solid #ddd
+  const projectContainer = $("#projects");
+  projects.forEach(project => {
+    const listItem = `
+      <li class="project-box">
+        <a href="${project.link}" target="_blank" class="project-link">${project.name}</a>
+      </li>`;
+    projectContainer.append(listItem);
+  });
+
+  // Animations (assuming you're keeping them)
+  gsap.from(".project-box", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.3
+  });
+});
