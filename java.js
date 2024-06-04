@@ -53,3 +53,4 @@ function introduceTypos(strings) {
         if (Math.random() < 0.3) { // 30% chance to introduce a typo
             const typoIndex = Math.floor(Math.random() * string.length);
             const typoChar = String.fromCharCode(97 + Math.floor(Math.random() * 26
+
