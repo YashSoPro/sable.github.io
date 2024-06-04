@@ -8,8 +8,8 @@ const projects = [
 function displayProjects() {
     const projectContainer = document.getElementById("projects");
     projectContainer.innerHTML = projects.map(project => `
-        <li class="project-box">
-            <a href="${project.link}" target="_blank">
+        <li class="project-box hvr-grow-shadow animate__animated animate__fadeInUp">
+            <a href="${project.link}" target="_blank" class="project-link">
                 <img src="https://i.ibb.co/kBCbD6y/github-icon.png" alt="GitHub">
                 <p>${project.name}</p>
             </a>
@@ -47,18 +47,9 @@ setTimeout(() => {
     });
 }, 15000);
 
-// Introducing typos randomly in the strings
+// Introduce typos randomly in the strings
 function introduceTypos(strings) {
     return strings.map(string => {
         if (Math.random() < 0.3) { // 30% chance to introduce a typo
             const typoIndex = Math.floor(Math.random() * string.length);
-            const typoChar = String.fromCharCode(97 + Math.floor(Math.random() * 26));
-            return string.substring(0, typoIndex) + typoChar + string.substring(typoIndex + 1);
-        }
-        return string;
-    });
-}
-
-let hobbiesText = $("#hobbies").attr("tw-text").split(', ');
-hobbiesText = introduceTypos(hobbiesText);
-$("#hobbies").attr("tw-text", hobbiesText.join(', '));
+            const typoChar = String.fromCharCode(97 + Math.floor(Math.random() * 26
