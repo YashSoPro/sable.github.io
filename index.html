@@ -10,121 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/buttercake@4.0.0/dist/css/butterCake.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #87CEEB, #FFFFFF);
-            overflow-x: hidden;
-        }
-        .header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-        }
-        .content {
-            text-align: center;
-            padding: 2em;
-        }
-        .profile-picture {
-            background-image: url('https://i.ibb.co/pQFDkT0/1000459698.png');
-            background-size: cover;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            display: inline-block;
-            margin-bottom: 1em;
-        }
-        .background {
-            background-image: url('https://i.ibb.co/w40fY98/1000459698.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            position: relative;
-        }
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-        .section {
-            margin: 2em 0;
-        }
-        .projects {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            list-style-type: none;
-            padding: 0;
-        }
-        .project-box {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: 200px;
-            margin: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .project-box:hover {
-            transform: scale(1.05);
-        }
-        .project-box img {
-            width: 50px;
-            height: 50px;
-        }
-        .project-box a {
-            text-decoration: none;
-            color: black;
-        }
-        .loader {
-            width: 48px;
-            height: 48px;
-            border: 2px solid #FFF;
-            border-radius: 50%;
-            display: inline-block;
-            position: relative;
-            box-sizing: border-box;
-            animation: rotation 1s linear infinite;
-        }
-        .loader::after {
-            content: '';  
-            box-sizing: border-box;
-            position: absolute;
-            left: 50%;
-            top: 0;
-            background: #FF3D00;
-            width: 3px;
-            height: 24px;
-            transform: translateX(-50%);
-        }
-        @keyframes rotation {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        .loader-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            display: none;
-        }
+        /* Your CSS styles here */
     </style>
 </head>
 <body>
@@ -132,56 +18,24 @@
         <h1>Welcome</h1>
     </div>
     <div class="background">
-        <div id="particles-js"></div>
         <div class="content">
-            <div class="profile-picture animate__animated animate__bounceIn"></div>
-            <div class="section">
-                <h2 id="name" tw-text="Yash Kumar"></h2>
-                <h3 id="alias" tw-text="Also known as Sable Meow"></h3>
-            </div>
-            <div class="section">
-                <h2>Hobbies</h2>
-                <p id="hobbies" tw-text="Music and I.T, Coding and Gaming, Exploring new technologies"></p>
-            </div>
+            <!-- Profile Picture, Name, Alias, and Hobbies sections go here -->
             <div class="section">
                 <h2>GitHub Projects</h2>
                 <ul class="projects" id="projects"></ul>
             </div>
-            <div class="container mt-5">
-                <h3 class="mb-4 px-1">Related Projects</h3>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 mb-4">
-                        <a href="#">
-                            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-4">
-                        <a href="#">
-                            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-4">
-                        <a href="#">
-                            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-4">
-                        <a href="#">
-                            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
+    <!-- Loader overlay -->
     <div class="loader-overlay">
         <span class="loader"></span>
     </div>
+    <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ahmeterenodaci.github.io/AEO-TypeWriter/js/aeo-typewriter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/buttercake@4.0.0/dist/js/butterCake.min.js"></script>
-    <script src="java.js"></script>
+    <script src="java.js"></script> <!-- Your JavaScript file -->
 </body>
 </html>
