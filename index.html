@@ -165,14 +165,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Loader overlay (assuming you still want it)
+            // Loader overlay
             $(window).on('load', function() {
                 setTimeout(function(){
                     $(".loader-overlay").fadeOut(500);
-                }, 1000); 
+                }, 1000);
             });
 
-            // Typewriter Effect for Profile Information (assuming you're keeping it)
+            // Typewriter Effect for Profile Information
             const typewriterSettings = {
                 waitingTime: 1000,
                 delay: 150,
@@ -197,7 +197,7 @@
                 waitingTime: 3000 // Overriding waitingTime for hobbies
             });
 
-            // Fetch GitHub Projects (assuming you still want it)
+            // Fetch GitHub Projects
             const projects = [
                 { name: "emuinabox", link: "https://github.com/YashSoPro/emuinabox" },
                 { name: "MeowCraftServer", link: "https://github.com/YashSoPro/MeowCraftServer" },
@@ -213,7 +213,7 @@
                 projectContainer.append(listItem);
             });
 
-            // Animations (assuming you're keeping them)
+            // Animations
             gsap.from(".project-box", {
                 opacity: 0,
                 y: 50,
