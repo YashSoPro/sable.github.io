@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Toggle dark mode function
     const darkModeBtn = document.getElementById('dark-mode-btn');
     const body = document.body;
 
+    // Toggle dark mode function
     darkModeBtn.addEventListener('click', function() {
         body.classList.toggle('dark-mode');
 
