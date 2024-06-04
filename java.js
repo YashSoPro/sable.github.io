@@ -1,0 +1,61 @@
+const projects = [
+    { name: "emuinabox", link: "https://github.com/YashSoPro/emuinabox" },
+    { name: "MeowCraftServer", link: "https://github.com/YashSoPro/MeowCraftServer" },
+    { name: "meowmc", link: "https://github.com/YashSoPro/meowmc" }
+];
+
+// Function to display projects
+function displayProjects() {
+    const projectContainer = document.getElementById("projects");
+    projectContainer.innerHTML = projects.map(project => `
+        <li class="project-box">
+            <a href="${project.link}" target="_blank">
+                <img src="https://i.ibb.co/kBCbD6y/github-icon.png" alt="GitHub">
+                <p>${project.name}</p>
+            </a>
+        </li>
+    `).join('');
+}
+
+displayProjects();
+
+// Typed.js typewriter effect for different sections
+const nameTyped = new Typed("#name", {
+    strings: ["Yash Kumar"],
+    typeSpeed: 50,
+    backSpeed: 30,
+    startDelay: 500,
+    showCursor: false
+});
+
+const aliasTyped = new Typed("#alias", {
+    strings: ["Also known as Sable Meow"],
+    typeSpeed: 50,
+    backSpeed: 30,
+    startDelay: 2500,
+    showCursor: false
+});
+
+const hobbiesTyped = new Typed("#hobbies", {
+    strings: ["Music and I.T", "Coding and Gaming", "Exploring new technologies"],
+    typeSpeed: 50,
+    backSpeed: 30,
+    loop: true,
+    backDelay: 2000,
+    startDelay: 4500,
+    showCursor: false
+});
+
+// Introducing typos randomly in the strings
+function introduceTypos(strings) {
+    return strings.map(string => {
+        if (Math.random() < 0.3) { // 30% chance to introduce a typo
+            const typoIndex = Math.floor(Math.random() * string.length);
+            const typoChar = String.fromCharCode(97 + Math.floor(Math.random() * 26));
+            return string.substring(0, typoIndex) + typoChar + string.substring(typoIndex + 1);
+        }
+        return string;
+    });
+}
+
+hobbiesTyped.strings = introduceTypos(hobbiesTyped.strings);
