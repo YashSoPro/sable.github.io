@@ -1,65 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome - Sable Meow</title>
-    
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- External Libraries -->
     <link rel="stylesheet" href="https://ahmeterenodaci.github.io/AEO-TypeWriter/css/aeo-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/buttercake@4.0.0/dist/css/butterCake.min.css">
     <style>
-        /* General Styles */
+        /* Your CSS styles here */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #fff;
         }
-        
         .header {
             background-color: #4CAF50;
             color: white;
             text-align: center;
             padding: 1em 0;
         }
-
         .background {
             background-color: #87CEEB;
             background-image: url('https://i.ibb.co/w40fY98/1000459698.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            height: 100vh;
         }
-
         .content {
             text-align: center;
             padding: 2em;
             color: #fff;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
         }
-
         .section {
             margin-bottom: 2em;
         }
-
         .projects {
             list-style: none;
             padding: 0;
         }
-
         .project-box {
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
@@ -67,101 +49,46 @@
             margin-bottom: 1em;
             transition: background-color 0.3s ease;
         }
-
         .project-box:hover {
             background-color: rgba(255, 255, 255, 0.3);
         }
-
         .project-link {
             color: #fff;
             text-decoration: none;
         }
-
-        .loader-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .loader {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #3498db;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 2s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
-
 <body>
-    <header class="header animate__animated animate__fadeInDown">
+    <div class="header animate__animated animate__fadeInDown">
         <h1>Welcome</h1>
-    </header>
-
-    <main class="background">
+    </div>
+    <div class="background">
         <div class="content">
-            <!-- Profile Picture, Name, Alias, and Hobbies sections -->
-            <section class="section">
+            <!-- Profile Picture, Name, Alias, and Hobbies sections go here -->
+            <div class="section">
                 <h2>Yash Kumar</h2>
                 <h3>Also known as Sable Meow</h3>
-            </section>
-
-            <section class="section">
+            </div>
+            <div class="section">
                 <h2>Hobbies</h2>
                 <p>Music and I.T</p>
-            </section>
-
-            <section class="section">
+            </div>
+            <div class="section">
                 <h2>GitHub Projects</h2>
                 <ul class="projects" id="projects"></ul>
-            </section>
+            </div>
         </div>
-    </main>
-
+    </div>
     <!-- Loader overlay -->
     <div class="loader-overlay">
         <span class="loader"></span>
     </div>
-
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ahmeterenodaci.github.io/AEO-TypeWriter/js/aeo-typewriter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/buttercake@4.0.0/dist/js/butterCake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="java.js"></script> <!-- Your JavaScript file -->
-
-    <script>
-        $(document).ready(function() {
-            // Hide loader overlay after page load
-            $(".loader-overlay").fadeOut(500);
-
-            // Example GSAP animation for projects
-            gsap.from(".project-box", {
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                stagger: 0.3
-            });
-        });
-
-        // Example JavaScript for dynamic content loading (e.g., GitHub API fetch)
-        // Fetch and render GitHub projects here...
-    </script>
 </body>
-
 </html>
